@@ -12,7 +12,3 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo $GITHUB_REF
-        echo $GITHUB_HEAD_REF
-        echo $GITHUB_BASE_REF
-    - name: Run GoReleaser
-      uses: goreleaser/goreleaser-action@master
