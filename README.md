@@ -1,5 +1,1 @@
-Test Repository for various git commands.
-
-* READ
-* ME
-* Markdown
+Test Repository for various git commands and GitHub features.
