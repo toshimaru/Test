@@ -4,6 +4,7 @@ jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-    - uses: toshimaru/auto-assign-action@skip-draft-option
+    # - uses: toshimaru/auto-assign-action@skip-draft-option
+    - uses: kentaro-m/auto-assign-action@v1.1.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
