@@ -1,5 +1,0 @@
-# Set to true to add reviewers to pull requests
-addReviewers: false
-
-# Set to author to set pr creater as assignee
-addAssignees: author
