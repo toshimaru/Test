@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # - uses: toshimaru/auto-assign-action@skip-draft-option
-    - uses: toshimaru/auto-author-assign@add-assign-action
+    - uses: toshimaru/auto-author-assign@v0.0.1
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
