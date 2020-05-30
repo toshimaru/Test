@@ -9,7 +9,7 @@ jobs:
       with:
         ruby-version: 2.6
     - run: |
-        bundle update --bundler
+        gem install bundler
         bundle install
     - name: Run RuboCop
       run: bundle exec rubocop
