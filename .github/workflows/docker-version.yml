@@ -1,0 +1,9 @@
+
+name: 'Check Docker Versions'
+on: [pull_request]
+jobs:
+  add-assignee:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker -v
+      - run: docker-compose -v
