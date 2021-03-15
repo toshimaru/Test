@@ -1,6 +1,6 @@
 
 name: 'Check Docker Versions'
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   add-assignee:
     runs-on: ubuntu-latest
