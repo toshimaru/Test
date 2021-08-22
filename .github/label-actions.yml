@@ -1,0 +1,6 @@
+'review request':
+  prs:
+    reviewers:
+      - mpg-toshimaru-enomoto
+      - toshimaru
+    number-of-reviewers: 1
