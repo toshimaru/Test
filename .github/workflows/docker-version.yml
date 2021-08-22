@@ -1,4 +1,3 @@
-
 name: 'Check Docker Versions'
 on: [push, pull_request]
 jobs:
