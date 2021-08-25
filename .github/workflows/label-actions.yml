@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: toshimaru/label-actions@v1.0.1
+      - uses: toshimaru/label-actions@v1.0.2
         with:
           github-token: ${{ github.token }}
           process-only: 'prs'
