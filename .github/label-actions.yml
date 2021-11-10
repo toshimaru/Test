@@ -4,3 +4,8 @@
       - mpg-toshimaru-enomoto
       - toshimaru
     number-of-reviewers: 1
+
+dependencies:
+  prs:
+    reviewers:
+      - toshimaru
