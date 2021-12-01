@@ -4,6 +4,8 @@ jobs:
   add-assignee:
     runs-on: ubuntu-latest
     steps:
+    - run: echo ${{ github.ref }}
+    - run: echo ${{ github.head_ref }}
     - uses: toshimaru/auto-author-assign@v1.4.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
