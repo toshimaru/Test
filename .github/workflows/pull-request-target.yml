@@ -1,0 +1,13 @@
+name: 'pull_request_target test'
+
+on: pull_request_target
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.workflow }}
