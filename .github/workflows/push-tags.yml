@@ -1,0 +1,10 @@
+name: push-tags-test
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 123
