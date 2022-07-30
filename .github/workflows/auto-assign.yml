@@ -1,9 +1,15 @@
 name: 'Auto Assign'
-on: [pull_request]
+
+on:
+  issues:
+    types: [ opened, reopened ]
+  pull_request_target:
+    types: [ opened, reopened ]
+
 jobs:
   add-assignee:
     runs-on: ubuntu-latest
     steps:
-    - uses: toshimaru/auto-author-assign@v1.5.1
+    - uses: toshimaru/auto-author-assign@v1.6.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
