@@ -1,0 +1,11 @@
+on:
+  push:
+    branches:    
+      - action-trigger-test
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Step
+        run: echo "Hello, action!"
