@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Test Step
         run: echo "Hello, action!"
+
   git-push:
     runs-on: ubuntu-latest
     steps:
@@ -21,3 +22,13 @@ jobs:
           git config --local user.name "github-actions"
           git commit --allow-empty -m "WIP"
           git push
+          git fetch origin/main
+      - run: |
+          gh api \
+          --method PATCH \
+          -H "Accept: application/vnd.github+json" \
+          /repos/${{ github.repository }}/git/refs/heads/push-test \
+          -f sha=$(git rev-parse origin/main) \
+          -F force=true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
