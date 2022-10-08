@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: |
+      - name: git force push via GitHub API
+        run: |
+          git fetch origin main
           gh api \
-          --method PATCH \
-          -H "Accept: application/vnd.github+json" \
-          /repos/${{ github.repository }}/git/refs/heads/push-test \
-          -f sha=$(git rev-parse origin/main) \
-          -F force=true
+            --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            /repos/${{ github.repository }}/git/refs/heads/push-test \
+            -f sha=$(git rev-parse origin/main) \
+            -F force=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
