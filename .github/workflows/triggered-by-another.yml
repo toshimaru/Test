@@ -1,3 +1,4 @@
+name: Triggered by another
 on:
   workflow_run:
     workflows:
