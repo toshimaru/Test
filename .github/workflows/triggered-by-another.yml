@@ -9,5 +9,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Test Step
-        run: echo "Triggered by another workflow"
+      - run: echo "Triggered by another workflow"
