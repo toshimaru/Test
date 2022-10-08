@@ -1,0 +1,13 @@
+name: Triggered by another
+on:
+  workflow_run:
+    workflows:
+      - Trigger
+    types:
+      - completed
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Step
+        run: echo "Triggered by another workflow"
