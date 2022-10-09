@@ -18,6 +18,7 @@ jobs:
       #     git commit --allow-empty -m "WIP"
       #     git push
       - run: |
+          git fetch origin main
           gh api \
             --method PATCH \
             -H "Accept: application/vnd.github+json" \
