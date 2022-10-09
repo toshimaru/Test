@@ -26,4 +26,4 @@ jobs:
             -f sha=$(git rev-parse origin/main) \
             -F force=true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
