@@ -1,0 +1,8 @@
+name: 'Check Docker Versions'
+on: [workflow_dispatch]
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker -v
+      - run: docker-compose -v
