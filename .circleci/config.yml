@@ -3,10 +3,14 @@ version: 2.1
 orbs:
   node: circleci/node@5.1.0
 
-jobs:
-  install-node-example:
+executors:
+  default:
     docker:
-      - image: 'cimg/base:stable'
+      - image: cimg/base:stable
+
+jobs:
+  install-node:
+    executor: default
     steps:
       - checkout
       - node/install:
@@ -19,4 +23,4 @@ jobs:
 workflows:
   install-yarn:
     jobs:
-      - install-node-example
+      - install-node
