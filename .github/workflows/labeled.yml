@@ -1,12 +1,11 @@
-name: 'Toshimaru Test'
+name: 'pull_request labeled event'
 
 on:
   pull_request:
     types: [labeled, unlabeled]
-  workflow_dispatch:
 
 jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 123
+      - run: echo 'pull_request labeled event'
