@@ -6,9 +6,6 @@ on:
       my-word:
         required: true
         type: string
-    secrets:
-      token:
-        required: true
 
 jobs:
   triage:
