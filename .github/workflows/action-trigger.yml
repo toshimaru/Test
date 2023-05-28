@@ -1,5 +1,8 @@
+# after completed `Triggered by another` workflow will be called
 name: Trigger
+
 on: push
+
 jobs:
   test:
     runs-on: ubuntu-latest
