@@ -3,11 +3,15 @@ name: Trigger
 
 on: push
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Trigger another!"
+      - run: echo "Trigger another workflow!"
 
   call-reusable-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
