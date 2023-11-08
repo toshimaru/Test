@@ -6,3 +6,4 @@ jobs:
     steps:
       - run: docker -v
       - run: docker-compose -v
+      - run: echo 'Hello from workflow_dispatch'
