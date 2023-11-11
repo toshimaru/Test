@@ -1,0 +1,17 @@
+on: push
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pre:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 100
+  main:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: pre
+    steps:
+      - run: echo ${{ needs.pre.result }}
