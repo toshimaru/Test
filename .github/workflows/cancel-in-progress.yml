@@ -8,7 +8,7 @@ jobs:
   pre:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 200
+      - run: sleep 100
   main:
     runs-on: ubuntu-latest
     if: always()
