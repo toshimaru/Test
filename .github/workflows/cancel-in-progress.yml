@@ -11,6 +11,7 @@ jobs:
       - run: sleep 300
   main:
     runs-on: ubuntu-latest
+    if: always()
     needs: pre
     steps:
-      - run: sleep 300
+      - run: echo ${{ needs.pre.result }}
