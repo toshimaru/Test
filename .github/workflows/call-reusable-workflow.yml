@@ -4,4 +4,4 @@ jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
-      my-word: 'Hello World!'
+      my-word: 'Hello World! 2'
