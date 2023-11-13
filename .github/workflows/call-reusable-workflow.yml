@@ -1,0 +1,7 @@
+on: push
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      my-word: 'Hello World!'
