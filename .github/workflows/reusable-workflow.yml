@@ -7,6 +7,9 @@ on:
         required: true
         type: string
 
+concurrency:
+  group: ${{ github.workflow }}
+
 jobs:
   triage:
     runs-on: ubuntu-latest
