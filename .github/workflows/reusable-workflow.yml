@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sleep 60
-      # head_ref is empty
-      - run: echo ${{ github.head_ref }}
+      - run: echo ${{ github.head_ref }} # head_ref is empty
+      - run: echo ${{ github.ref }}
       - run: echo ${{ inputs.my-word }}
