@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: Reusable workflow
 
 on:
   workflow_call:
@@ -6,6 +6,10 @@ on:
       my-word:
         required: true
         type: string
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
 
 jobs:
   triage:
