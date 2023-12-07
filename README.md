@@ -1,1 +1,1 @@
-Test Repository for various git commands and GitHub features.
+A Repository for testing various git commands and GitHub features.
