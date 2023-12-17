@@ -1,0 +1,27 @@
+name: '$GITHUB_OUTPUT'
+
+on:
+  pull_request:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get parent commit from topic branch
+        run: git rev-list --parents -n 1 @ | awk '{print $3}'
+      - name: $GITHUB_OUTPUT
+        id: git
+        run: |
+          parent_commit=$(git rev-list --parents -n 1 @ | awk '{print $3}')
+          echo "parent_commit=$parent_commit" >> $GITHUB_OUTPUT
+      - name: Output the result 1
+        if: steps.git.outputs.parent_commit
+        run: |
+          echo "commit: ${{ steps.git.outputs.parent_commit }}"
+      - name: Output the result 2
+        if: steps.git.outputs.parent_commit == ''
+        run: |
+          echo "commit is empty!"
