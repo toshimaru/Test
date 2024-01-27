@@ -1,0 +1,7 @@
+name: buildjet
+on: push
+jobs:
+  job:
+    runs-on: buildjet-2vcpu-ubuntu-2204-arm
+    steps:
+      - run: echo "hello world"
