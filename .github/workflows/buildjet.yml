@@ -1,0 +1,7 @@
+name: buildjet
+on: push
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello world"
