@@ -13,4 +13,4 @@ jobs:
           ref: refs/pull/${{ github.event.number }}/merge
       - uses: snnaplab/delete-branch-cache-action@v1
         with:
-          ref: ${{ github.head_ref }}
+          ref: refs/heads/${{ github.head_ref }}
