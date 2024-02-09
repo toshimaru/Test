@@ -1,0 +1,44 @@
+name: MySQL services
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+          MYSQL_DATABASE: testdb
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping -h 127.0.0.1"
+          --health-interval 10s
+          --health-timeout 10s
+          --health-retries 10
+      mysql2:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+          MYSQL_DATABASE: testdb
+        ports:
+          - 3307:3306
+        options: >-
+          --health-cmd "mysqladmin ping -h 127.0.0.1"
+          --health-interval 10s
+          --health-timeout 10s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      # - uses: mxschmitt/action-tmate@v3
+      - name: Verify MySQL connection 1
+        run: |
+          mysql -h 127.0.0.1 -u root -e 'SHOW DATABASES;'
+          for file in sql/*.sql; do
+            mysql -h 127.0.0.1 -u root < $file
+          done
+      - name: Verify MySQL connection 2
+        run: |
+          mysql -h 127.0.0.1 -u root -P 3307 -e 'SHOW DATABASES;'
