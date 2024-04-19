@@ -18,7 +18,7 @@ jobs:
             } else if (github.event_name === 'pull_request') {
               return github.event.number;
             } else {
-              throw Error('Unexpected event');
+              throw Error(`Unexpected event ${github.event_name}`);
             }
       - run: |
           echo "PR number: ${{ steps.pr-number.outputs.result }}"
