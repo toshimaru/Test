@@ -15,7 +15,7 @@ jobs:
           script: |
             if (github.event_name === 'issue_comment') {
               return context.issue.number;
-            } else if (eventName === 'pull_request') {
+            } else if (github.event_name === 'pull_request') {
               return github.event.number;
             } else {
               throw Error('Unexpected event');
