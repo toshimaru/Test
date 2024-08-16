@@ -5,6 +5,7 @@ on:
     types: [closed]
   pull_request_target:
     types: [closed]
+  workflow_dispatch:
 jobs:
   wip:
     runs-on: ubuntu-latest
