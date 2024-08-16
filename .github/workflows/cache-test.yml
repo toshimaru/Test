@@ -2,6 +2,7 @@ name: Delete Action Cache (test)
 on:
   push:
   pull_request:
+    types: [merged]
 jobs:
   wip:
     runs-on: ubuntu-latest
