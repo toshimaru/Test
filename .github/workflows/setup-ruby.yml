@@ -1,8 +1,6 @@
 name: Setup Ruby
 on:
   push:
-    branches:
-      - main
   pull_request:
 jobs:
   rspec:
