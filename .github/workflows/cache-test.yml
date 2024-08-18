@@ -1,22 +1,10 @@
 name: Delete Action Cache (test)
 on:
-  push:
-  pull_request:
-    types: [closed]
   pull_request_target:
     types: [closed]
-    branches-ignore:
-      - main
   workflow_dispatch:
 jobs:
   wip:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
       - uses: toshimaru/delete-action-cache@main
-      - name: Dump github context
-        run: echo '${{ toJSON(github) }}'
