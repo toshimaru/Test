@@ -15,7 +15,7 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 60
+      - run: sleep 30
       - run: echo ${{ github.head_ref }} # head_ref is empty
       - run: echo ${{ github.ref }}
       - run: echo ${{ inputs.my-word }}
