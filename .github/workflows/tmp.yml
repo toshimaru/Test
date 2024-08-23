@@ -1,0 +1,10 @@
+name: Temp Workflow
+on:
+  push:
+jobs:
+  tmp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - run: echo "Hello, World!"
