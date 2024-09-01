@@ -3,6 +3,8 @@ on:
   pull_request_target:
     types: [closed]
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
 jobs:
   delete-cache:
     runs-on: ubuntu-latest
