@@ -1,0 +1,10 @@
+name: "Continue on error"
+on:
+  pull_request:
+jobs:
+  continue-on-error:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This step will run"
+      - run: exit 1
+      - run: echo "This step will not run"
