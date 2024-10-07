@@ -4,6 +4,7 @@ on:
 jobs:
   continue-on-error:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - run: echo "This step will run"
       - run: exit 1
