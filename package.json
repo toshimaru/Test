@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/toshimaru/Test#readme",
   "devDependencies": {
-    "eslint": "9.13.0"
+    "eslint": "9.38.0"
   }
 }
