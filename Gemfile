@@ -4,3 +4,4 @@ source "https://rubygems.org"
 
 gem "rails"
 gem 'net-pop'
+gem 'git-pr-release'
