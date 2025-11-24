@@ -31,7 +31,7 @@ jobs:
           --health-timeout 10s
           --health-retries 10
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       # - uses: mxschmitt/action-tmate@v3
       - name: Verify MySQL connection 1
         run: |
