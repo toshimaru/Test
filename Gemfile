@@ -3,4 +3,5 @@
 source "https://rubygems.org"
 
 gem "rails"
-gem 'net-pop', github: 'ruby/net-pop'
+gem 'net-pop'
+gem 'git-pr-release'
