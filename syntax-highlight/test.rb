@@ -19,3 +19,21 @@ def test1
 MARKDOWN
   puts str
 end
+
+def test2
+  doc = <<-RUBY
+    def hello
+      puts "Hello World!"
+    end
+  RUBY
+  puts doc
+end
+
+def test3
+  doc = <<~RUBY
+    def hello
+      puts "Hello World!"
+    end
+  RUBY
+  puts doc
+end
